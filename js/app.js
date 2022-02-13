@@ -32,3 +32,19 @@ document.getElementById("calc-digit").addEventListener("click", function(event){
         typedNumbers.value = newNumber;
     }
 })
+
+function verifyPin(){
+    const secretPin = document.getElementById("secret-pin").value;
+    const userPin = document.getElementById("typed-numbers").value;
+    const errorMessage = document.getElementById("error-message");
+    const successMessage = document.getElementById("success-message");
+
+    if(secretPin == userPin){
+        successMessage.style.display = "block";
+        errorMessage.style.display = "none";
+    }
+    else{
+        errorMessage.style.display = "block";
+        successMessage.style.display = "none";
+    }
+}
