@@ -14,3 +14,21 @@ function generatePin(){
     const pin = getPin();
     document.getElementById("secret-pin").value = pin;
 }
+
+// interactive calculator
+
+document.getElementById("calc-digit").addEventListener("click", function(event){
+
+    const calcInput = event.target.innerText;
+    const typedNumbers = document.getElementById("typed-numbers");
+    if(isNaN(calcInput)){
+        if(calcInput == "C"){
+            typedNumbers.value = "";
+        }
+    }
+    else{
+        const previousNumber = typedNumbers.value;
+        const newNumber = previousNumber + calcInput;
+        typedNumbers.value = newNumber;
+    }
+})
